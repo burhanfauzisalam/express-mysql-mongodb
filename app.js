@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const teacher = require("./app/routes/teacherRouter");
+const admin = require("./app/routes/adminRouter");
 
 require("dotenv").config();
 const port = process.env["PORT"] || 3000;
@@ -11,6 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api", teacher);
+app.use("/api", admin);
 app.get("/", (req, res) =>
   res.status(200).json({ message: "Server berjalan..." })
 );
