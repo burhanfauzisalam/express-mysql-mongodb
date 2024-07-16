@@ -1,7 +1,7 @@
 const teacherModel = require("../../models/teachers");
 
 const getTeacher = async (req, res) => {
-  const { id } = req.query;
+  const id = req.id;
   try {
     const data = await teacherModel.getTeacher(id);
 

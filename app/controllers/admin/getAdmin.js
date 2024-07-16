@@ -1,7 +1,7 @@
 const adminModel = require("../../models/admin");
 
 const getAdmin = async (req, res) => {
-  const { id } = req.query;
+  const id = req.id;
   try {
     const data = await adminModel.getAdmin(id);
     res.status(200).json({

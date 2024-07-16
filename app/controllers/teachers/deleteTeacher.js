@@ -1,7 +1,7 @@
 const teacherModel = require("../../models/teachers");
 
 const deleteTeacher = async (req, res) => {
-  const { id } = req.query;
+  const id = req.id;
   try {
     await teacherModel.deleteTeacher(id);
     res.status(200).json({
