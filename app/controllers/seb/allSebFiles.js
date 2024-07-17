@@ -4,7 +4,7 @@ const allSebFiles = async (req, res) => {
   try {
     const data = await sebModel.find();
     // console.log(data);
-    res.status(200).json(data);
+    res.status(200).json({ data });
   } catch (error) {
     res.status(500).json(error);
   }

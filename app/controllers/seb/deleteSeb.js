@@ -13,7 +13,7 @@ const deleteSeb = async (req, res) => {
       formData,
       { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
     );
-    if (deleteFile.data.status !== 200) {
+    if (deleteFile.status !== 200) {
       return res.status(400).json({ error: "Failed to delete." });
     }
     const file = await sebModel.findOneAndDelete({ filename });
